@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wanderlust3-dev-143925-authRole",
+      "UnauthRoleArn": "arn:aws:iam::437715467036:role/amplify-wanderlust3-dev-143925-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::437715467036:role/amplify-wanderlust3-dev-143925-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-wanderlust3-dev-143925-deployment",
+      "UnauthRoleName": "amplify-wanderlust3-dev-143925-unauthRole",
+      "StackName": "amplify-wanderlust3-dev-143925",
+      "StackId": "arn:aws:cloudformation:us-east-2:437715467036:stack/amplify-wanderlust3-dev-143925/934034d0-a1c2-11ee-af57-0a50efd786bf",
+      "AmplifyAppId": "d3tdvk2tt8355y"
+    }
+  }
+}
