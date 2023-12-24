@@ -10,6 +10,14 @@
       "StackName": "amplify-wanderlust3-dev-143925",
       "StackId": "arn:aws:cloudformation:us-east-2:437715467036:stack/amplify-wanderlust3-dev-143925/934034d0-a1c2-11ee-af57-0a50efd786bf",
       "AmplifyAppId": "d3tdvk2tt8355y"
+    },
+    "categories": {
+      "api": {
+        "wanderlust3api": {}
+      },
+      "auth": {
+        "wanderlust3feb18044": {}
+      }
     }
   }
 }
