@@ -10,32 +10,20 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 
+import { generateClient } from 'aws-amplify/api';
 import { createTodo } from '../src/graphql/mutations';
 import { listTodos } from '../src/graphql/queries';
+
+const client = generateClient();
 
 const EntryScreen = ({navigation, todos, setTodos}) => {
   const initialState = { name: '', description: '' };
 
   const [formState, setFormState] = useState(initialState);
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
 
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value });
-  }
-
-  async function fetchTodos() {
-    try {
-      const todoData = await client.graphql({
-        query: listTodos
-      });
-      const todos = todoData.data.listTodos.items;
-      setTodos(todos);
-    } catch (err) {
-      console.log('error fetching todos');
-    }
   }
 
   async function addTodo() {

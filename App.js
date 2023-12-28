@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   Pressable,
   SafeAreaView
 } from 'react-native';
@@ -51,23 +50,6 @@ const App = () => {
     }
   }
 
-  async function addTodo() {
-    try {
-      if (!formState.name || !formState.description) return;
-      const todo = { ...formState };
-      setTodos([...todos, todo]);
-      setFormState(initialState);
-      await client.graphql({
-        query: createTodo,
-        variables: {
-          input: todo
-        }
-      });
-    } catch (err) {
-      console.log('error creating todo:', err);
-    }
-  }
-
 // retrieves only the current value of 'user' from 'useAuthenticator'
 const userSelector = (context) => [context.user];
 
@@ -85,7 +67,7 @@ const userSelector = (context) => [context.user];
 export default withAuthenticator(App);
 
 const styles = StyleSheet.create({
-  container: { width: 400, flex: 1, padding: 20, alignSelf: 'center' },
+  container: { width: 400, flex: 1, alignSelf: 'center' },
   todo: { marginBottom: 15 },
   input: {
     backgroundColor: '#ddd',
