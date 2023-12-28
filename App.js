@@ -71,45 +71,11 @@ const App = () => {
 // retrieves only the current value of 'user' from 'useAuthenticator'
 const userSelector = (context) => [context.user];
 
-const SignOutButton = () => {
-  const { user, signOut } = useAuthenticator(userSelector);
-  return (
-    <Pressable onPress={signOut} style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>
-        Hello, {user.username}! Click here to sign out!
-      </Text>
-    </Pressable>
-  );
-};
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <TextInput
-          onChangeText={(value) => setInput('name', value)}
-          style={styles.input}
-          value={formState.name}
-          placeholder="Name"
-        />
-        <TextInput
-          onChangeText={(value) => setInput('description', value)}
-          style={styles.input}
-          value={formState.description}
-          placeholder="Description"
-        />
-        <Pressable onPress={addTodo} style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Create todo</Text>
-        </Pressable>
-        {todos.map((todo, index) => (
-          <View key={todo.id ? todo.id : index} style={styles.todo}>
-            <Text style={styles.todoName}>{todo.name}</Text>
-            <Text style={styles.todoDescription}>{todo.description}</Text>
-          </View>
-        ))}
-        <SignOutButton />
-
         <NavigationContainer>
-          <Tabs />
+          <Tabs todos={todos} setTodos={setTodos}/>
         </NavigationContainer>
       </View>
     </SafeAreaView>
