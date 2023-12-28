@@ -21,6 +21,9 @@ import {
   useAuthenticator
 } from '@aws-amplify/ui-react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import Tabs from './navigation/Tabs';
+
 const initialState = { name: '', description: '' };
 const client = generateClient();
 
@@ -104,6 +107,10 @@ const SignOutButton = () => {
           </View>
         ))}
         <SignOutButton />
+
+        <NavigationContainer>
+          <Tabs />
+        </NavigationContainer>
       </View>
     </SafeAreaView>
   );
